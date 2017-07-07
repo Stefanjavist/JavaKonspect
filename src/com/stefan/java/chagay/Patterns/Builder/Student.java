@@ -73,7 +73,7 @@ public class Student {
                     scores.math,
                     scores.chemistry,
                     scores.physics
-                            };
+            };
 
             for (String s : sc){
                 System.out.println(s);
