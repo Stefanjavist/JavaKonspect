@@ -1,8 +1,6 @@
-package com.stefan.java.chagay.BuilderJava;
+package com.stefan.java.chagay.StringInJava;
 
-/**
- * Created by Stefan on 12.07.2017.
- */
+
 public class TestBuikder {
 
     public static void main(String[] args) {
