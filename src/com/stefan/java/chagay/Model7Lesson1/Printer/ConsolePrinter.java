@@ -1,10 +1,11 @@
-package com.stefan.java.chagay.Model7Lesson1.Printer;
+package com.stefan.java.chagay.Model7Lesson1.printer;
 
+import com.stefan.java.chagay.Model7Lesson1.printer.IPrinter;
 
+public class ConsolePrinter implements IPrinter {
 
-public class ConsolePrinter implements IPrint{
     @Override
-    public void print(String text) {
+    public void print(final String text) {
         System.out.println(text);
     }
 }
