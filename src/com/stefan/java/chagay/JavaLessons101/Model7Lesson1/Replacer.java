@@ -1,11 +1,11 @@
-package com.stefan.java.chagay.Model7Lesson1;
+package com.stefan.java.chagay.JavaLessons101.Model7Lesson1;
 
 
-import com.stefan.java.chagay.Model7Lesson1.printer.AdvConsolePrinter;
-import com.stefan.java.chagay.Model7Lesson1.printer.ConsolePrinter;
-import com.stefan.java.chagay.Model7Lesson1.printer.IPrinter;
-import com.stefan.java.chagay.Model7Lesson1.reader.IReader;
-import com.stefan.java.chagay.Model7Lesson1.reader.PredifineReader;
+import com.stefan.java.chagay.JavaLessons101.Model7Lesson1.printer.AdvConsolePrinter;
+import com.stefan.java.chagay.JavaLessons101.Model7Lesson1.printer.ConsolePrinter;
+import com.stefan.java.chagay.JavaLessons101.Model7Lesson1.printer.IPrinter;
+import com.stefan.java.chagay.JavaLessons101.Model7Lesson1.reader.IReader;
+import com.stefan.java.chagay.JavaLessons101.Model7Lesson1.reader.PredifineReader;
 
 public class Replacer {
 

@@ -1,6 +1,4 @@
-package com.stefan.java.chagay.Model7Lesson1.printer;
-
-import com.stefan.java.chagay.Model7Lesson1.printer.IPrinter;
+package com.stefan.java.chagay.JavaLessons101.Model7Lesson1.printer;
 
 public class ConsolePrinter implements IPrinter {
 

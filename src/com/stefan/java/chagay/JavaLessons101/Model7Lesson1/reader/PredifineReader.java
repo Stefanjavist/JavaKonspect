@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.Model7Lesson1.reader;
+package com.stefan.java.chagay.JavaLessons101.Model7Lesson1.reader;
 
 public class PredifineReader implements IReader{
 

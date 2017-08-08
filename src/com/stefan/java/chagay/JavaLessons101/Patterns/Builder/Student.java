@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.Patterns.Builder;
+package com.stefan.java.chagay.JavaLessons101.Patterns.Builder;
 
 public class Student {
     private final String rus;
