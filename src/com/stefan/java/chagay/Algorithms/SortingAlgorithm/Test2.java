@@ -14,7 +14,6 @@ public class Test2 {
                     array[h + 1] = temp;
                 }
             }
-
         }
 
         return array;
