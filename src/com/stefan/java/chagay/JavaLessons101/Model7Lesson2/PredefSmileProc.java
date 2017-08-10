@@ -12,4 +12,9 @@ public class PredefSmileProc extends AbstractSmileProcessor {
         final PredefSmileProc predefSmileProc = new PredefSmileProc();
         predefSmileProc.process();
     }
+
+    @Override
+    public void test1() {
+
+    }
 }
