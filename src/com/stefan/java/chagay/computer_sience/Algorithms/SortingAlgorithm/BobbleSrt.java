@@ -7,7 +7,7 @@ public class BobbleSrt {
 
         int i, j, temp;
 
-        for (i = 0; i < list.length - 1; i++) {
+        for (i = 0; i < list.length; i++) {
             for (j = 0; j < list.length - 1 - i; j++) {
                 if (list[j] > list[j + 1]) {
                     temp = list[j];

@@ -21,7 +21,7 @@ public class Test2 {
 
     public static void main(String[] args) {
         int[] array = new int[]{3, 43, 12, 322, 2343, 31,
-                                12, 3133, 3, 3, 3, 313, 212,};
+                                12, 3133, 3, 3, 3, 313, 1};
 
         for (int i : bubbleSrt(array)) {
             System.out.println(i);
