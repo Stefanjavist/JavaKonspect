@@ -3,7 +3,7 @@ package com.stefan.java.chagay.computer_sience.Algorithms.LinkedLists.create_lis
 public class Node {
 
     private int data;
-    private Node next;
+    private Node next;//ссылка
 
     public int getData() {
         return data;

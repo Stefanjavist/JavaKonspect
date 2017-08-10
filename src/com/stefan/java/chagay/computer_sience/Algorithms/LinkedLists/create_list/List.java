@@ -3,15 +3,36 @@ package com.stefan.java.chagay.computer_sience.Algorithms.LinkedLists.create_lis
 public class List {
 
 /*
-1) class that represents a list
+1) class that represents a list and insert operation
  */
-    private Node first;
+
+    public static void main(String[] args) {
+        List list = new List();
+
+        int firstData = 23;
+        int secondData = 43;
+        int tridCell = 5;
+
+
+
+        //but why do we do it if our method insert(int data) can to create nodes and sets values
+        //that we convey.I want to check an easy rule java, or rather rewriting variables in
+        // the same object (class)
+
+//        Node node = new Node();
+//        node.setData(firstData);
+//        node.setData(secondData);
+//        node.setData(tridCell);
+//        System.out.println(node.getData());//here will be last overwritten variable(wonderful feeling)
+
+    }
+    private static Node first;//это в книжке top
 
     public List() {
         this.first = null;
     }
 
-    public void insert(int data) {
+    private void insert(int data) {//he's gorgeous))) he's creating obj by input values
         Node node = new Node();
         node.setData(data);
         node.setNext(first);
@@ -21,11 +42,11 @@ public class List {
     /*
   2)  Find element
      */
-    public Node find(int nomer) {
+    private Node find(int nomer) {//he find mention by input values obj
         return findLogic(first, nomer);
     }
 
-    public Node findLogic(Node node, int nomer) {
+    private Node findLogic(Node node, int nomer) {
         if(node == null) return null;
         if(node.getData() == nomer) return node;
         return findLogic(node.getNext(), nomer);
@@ -36,7 +57,7 @@ public class List {
 
     1.Обнаружение элемента, находящегося перед тем, который хотим удалить.
      */
-    public Node findPredecessor(int i) {
+    private Node findPredecessor(int i) {
         return findPredecessor(first, i);
     }
 
@@ -54,9 +75,9 @@ public class List {
     }
 
     /*
-    Удаление
+    3. Удаление  и привязка к следующему элементу
      */
-    public void delete(int i) {
+    private void delete(int i) {
         Node element = find(i);
         if (element != null) {
             Node predecessor = findPredecessor(i);
@@ -67,6 +88,7 @@ public class List {
             } else {
                 first = element.getNext();
             }
+
             element = null;
         }
     }
