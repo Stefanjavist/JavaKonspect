@@ -9,11 +9,14 @@ public class List {
     public static void main(String[] args) {
         List list = new List();
 
-        int firstData = 23;
-        int secondData = 43;
-        int tridCell = 5;
-
-
+        Node node1 = new Node();
+        Node node2 = new Node();
+        Node node3 = new Node();
+        node1.setData(12);
+        node2.setData(3);
+        node3.setData(5);
+        list.delete(node1.getData());
+        System.out.println(list.find(12));
 
         //but why do we do it if our method insert(int data) can to create nodes and sets values
         //that we convey.I want to check an easy rule java, or rather rewriting variables in
@@ -26,7 +29,7 @@ public class List {
 //        System.out.println(node.getData());//here will be last overwritten variable(wonderful feeling)
 
     }
-    private static Node first;//это в книжке top
+    private Node first;//это в книжке top
 
     public List() {
         this.first = null;
