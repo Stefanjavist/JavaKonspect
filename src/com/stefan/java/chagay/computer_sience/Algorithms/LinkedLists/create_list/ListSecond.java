@@ -22,25 +22,25 @@ public class ListSecond {
         /**
         *заполнение cells
          */
-        ls.insert(cell1.getData());
-        ls.insert(cell2.getData());
-        ls.insert(cell3.getData());
+        ls.insert(cell1.getData());//459
+        ls.insert(cell2.getData());//460
+        ls.insert(cell3.getData());//461
 
-        System.out.println("выставление чисел \nзаполнение cells...\n\ndelete and check first node\n");
-
-        ls.delete(cell1.getData());
-
-        System.out.println(ls.findCell(12)+ " - " + cell1.getName());
-        System.out.println(ls.findCell(4)+ " - " + cell2.getName());
-        System.out.println(ls.findCell(82)+ " - " + cell3.getName());
-
-        ls.insertPosition(2, 121);
-        System.out.println(ls.findCell(121) + " - " + ls.findCell(121).getName());
-        System.out.println(ls.findCell(121).getData());
+//        System.out.println("выставление чисел \nзаполнение cells...\n\ndelete and check first node\n");
+//
+//        ls.delete(cell1.getData());
+//
+//        System.out.println(ls.findCell(12)+ " - " + cell1.getName());
+//        System.out.println(ls.findCell(4)+ " - " + cell2.getName());
+//        System.out.println(ls.findCell(82)+ " - " + cell3.getName());
+//
+//        ls.insertPosition(2, 121);
+//        System.out.println(ls.findCell(121) + " - " + ls.findCell(121).getName());
+//        System.out.println(ls.findCell(121).getData());
 
 
         ls.deletePosition(1);
-        System.out.println(ls.findCell(5));
+        System.out.println(ls.findCell(4));
     }
 
     MyCell top;
@@ -81,12 +81,12 @@ public class ListSecond {
         return findLogic(top, i);
     }
 
-    private MyCell findLogic(MyCell top, int target) {
-        while (top != null) {//начальный равен null?
-            if (top.getData() == target) {// у начальнего есть значение которое нам нужно найти?
-                return top;
+    private MyCell findLogic(MyCell cell, int target) {
+        while (cell != null) {//начальный равен null?
+            if (cell.getData() == target) {// у начальнего есть значение которое нам нужно найти?
+                return cell;
             }else {
-                top = top.getNext();
+                cell = cell.getNext();
             }
         }
             return null;
@@ -133,17 +133,17 @@ public class ListSecond {
     }
 
     public void deletePosition (int position) {
-
+        MyCell element = findElementAt(position);
         if(position == 0){
             top = null;
+            return;
         }
 
         MyCell predecessor = findElementAt(position - 1);
-        MyCell next2Cell = predecessor.getNext();
-
-
-        if (predecessor == null) {
-            predecessor.setNext(next2Cell);
+        if (predecessor != null) {
+            predecessor.setNext(element.getNext());
+        } else {
+            top = element.getNext();
         }
     }
 
