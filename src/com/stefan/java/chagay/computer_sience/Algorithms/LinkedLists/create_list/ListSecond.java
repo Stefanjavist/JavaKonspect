@@ -7,42 +7,41 @@ public class ListSecond {
     public static void main(String[] args) {
         ListSecond ls = new ListSecond();
 
-        MyCell cell1 = new MyCell("Four cell");
-        MyCell cell2 = new MyCell("Third cell");
-        MyCell cell3 = new MyCell("Second cell");
-        MyCell cell4 = new MyCell("First cell");
-
 
         /**
          * выставление чисел
          */
-        cell1.setData(12);
-        cell2.setData(4);
-        cell3.setData(82);
-        cell4.setData(44);
+        int data1 = 12;
+        int data2 = 4;
+        int data3 = 82;
+        int data4 = 44;
 
         /**
          *заполнение cells
          */
-        ls.insert(cell1.getData());//459
-        ls.insert(cell2.getData());//460
-        ls.insert(cell3.getData());//461
-        ls.insert(cell4.getData());//461
+        ls.insert(data1);//459
+        ls.insert(data2);//460
+        ls.insert(data3);//461
+        ls.insert(data4);//461
 
         System.out.println("выставление чисел \nзаполнение cells...\n\ndelete and check first node\n");
 
         System.out.println("\n");
 
-        System.out.println(ls.findCell(12)+ " - " + cell1.getName());
-        System.out.println(ls.findCell(4)+ " - " + cell2.getName());
-        System.out.println(ls.findCell(82)+ " - " + cell3.getName());
-        System.out.println(ls.findCell(44)+ " - " + cell4.getName());
+        System.out.println(ls.findCell(12)+ " - " + data1);
+        System.out.println(ls.findCell(4)+ " - " + data2);
+        System.out.println(ls.findCell(82)+ " - " + data3);
+        System.out.println(ls.findCell(44)+ " - " + data4);
 
-        ls.deletePosition(1);
-        System.out.println("\nПосле\n" + ls.findCell(12));
-        System.out.println(ls.findCell(4));
-        System.out.println(ls.findCell(82));
-        System.out.println(ls.findCell(44));
+//        ls.deletePosition(0);
+//        System.out.println("\nПосле\n" + ls.findCell(12));
+//        System.out.println(ls.findCell(4));
+//        System.out.println(ls.findCell(82));
+//        System.out.println(ls.findCell(44));
+
+        ls.addDoubleConnected(23);
+        System.out.println(ls.findCell(23));
+
 
 //        ArrayList s = new ArrayList();
 //        s.add(12);
@@ -61,7 +60,7 @@ public class ListSecond {
     // Оно заключается в простом добавлении нового элемента в начало списка и модификации указателя так,
     // чтобы первый указатель был направлен к новому элементу.
     public void insert(int i) {
-        MyCell myCell = new MyCell("");
+        MyCell myCell = new MyCell();
         myCell.setData(i);
         myCell.setNext(top);// newCell2 /указатель\ --->newCell1 /указатель\--->null
         top = myCell;//сохраняем новую клетку первой как в стеке
@@ -127,7 +126,7 @@ public class ListSecond {
         }
         MyCell predecessor = findElementAt(position - 1);
         if (predecessor != null) {//if finish cell stand still the predecessor
-            MyCell newCell = new MyCell("new cell from insert");
+            MyCell newCell = new MyCell();
             newCell.setData(data);
             newCell.setNext(predecessor.getNext());//установка связи со следующей cell
             predecessor.setNext(newCell);//привязывает свою указатель к новому появившемуся cell
@@ -155,6 +154,26 @@ public class ListSecond {
             pred.setNext(element.getNext());
         }
     }
+//-------------------------------
+    //another list
+    //двухсвязный список
+    //add cell after previous
+    public void addDoubleConnected(int i) {
+
+        insert(i);
+        MyCell previous = findPredecessor(i);
+        if(previous != null) {
+        MyCell newCell = new MyCell();
+        newCell.setData(i);
+
+        newCell.setNext(previous.getNext());
+        previous.setNext(newCell);
+
+        newCell.setNext(previous);
+        previous.getNext().setNext(newCell);
+        }
+    }
+
 
 
 }
