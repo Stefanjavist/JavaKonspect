@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.computer_sience.Algorithms.SortingAlgorithm;
+package com.stefan.java.chagay.computer_sience.Algorithms.SortingAlgorithm.bubbleSrt;
 
 
 public class Test2 {
