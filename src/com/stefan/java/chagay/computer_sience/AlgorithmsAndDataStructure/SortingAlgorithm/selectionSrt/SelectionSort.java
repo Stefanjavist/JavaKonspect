@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.computer_sience.Algorithms.SortingAlgorithm.selectionSrt;
+package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.SortingAlgorithm.selectionSrt;
 
 public class SelectionSort {
 

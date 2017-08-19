@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.computer_sience.Algorithms.LinkedLists.create_list;
+package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.LinkedLists.create_list;
 
 
 

@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.computer_sience.Algorithms;
+package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure;
 
 
 public class AsimtotComplexity {
