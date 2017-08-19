@@ -39,8 +39,8 @@ public class ListSecond {
 //        System.out.println(ls.findCell(82));
 //        System.out.println(ls.findCell(44));
 
-        ls.addDoubleConnected(23);
-        System.out.println(ls.findCell(23));
+//        ls.addDoubleConnected(23);
+//        System.out.println("\n\n" + ls.findCell(23));
 
 
 //        ArrayList s = new ArrayList();
@@ -51,6 +51,9 @@ public class ListSecond {
 //        s.remove(1);
 //        System.out.println(s.size());
 
+        //-------------------------------
+        ls.reverse();
+        System.out.println(ls.findElementAt(5));
     }
     MyCell top;//!!!!!
 
@@ -67,6 +70,7 @@ public class ListSecond {
         //в итоге получим  newCell2 --->newCell1 --->null
         //так как в top сохранилась newCell1
     }
+
 
 
     public MyCell findPredecessor(int i) {
@@ -174,6 +178,21 @@ public class ListSecond {
         }
     }
 
+
+    //-------------------------------
+    private void reverse() {
+        MyCell prev = null;
+        MyCell next = top;
+        while (top != null) {
+            next = top.getNext();
+            top.setNext(prev);
+
+            //logic
+            prev = top;
+            top = next;
+        }
+        top = prev;
+    }
 
 
 }
