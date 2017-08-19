@@ -1,6 +1,7 @@
 package com.stefan.java.chagay.computer_sience.Algorithms.LinkedLists.create_list;
 
 
+
 public class ListSecond {
 
 
@@ -17,32 +18,39 @@ public class ListSecond {
         int data4 = 44;
 
         /**
-         *заполнение cells
+         *заполнение и вывод cells
          */
-        ls.insert(data1);//459
-        ls.insert(data2);//460
-        ls.insert(data3);//461
-        ls.insert(data4);//461
 
-        System.out.println("выставление чисел \nзаполнение cells...\n\ndelete and check first node\n");
+        MyCell[] cells = new MyCell[]{
+                ls.insert(data4),//459
+                ls.insert(data3),//460
+                ls.insert(data2),//461
+                ls.insert(data1),//461
+        };
 
-        System.out.println("\n");
+        for (MyCell i : cells) {
+            System.out.println(findNumberCell(i));
+        }
+
+        System.out.println("\n Research cells across data");
+
 
         System.out.println(ls.findCell(12)+ " - " + data1);
         System.out.println(ls.findCell(4)+ " - " + data2);
-        System.out.println(ls.findCell(82)+ " - " + data3);
         System.out.println(ls.findCell(44)+ " - " + data4);
 
+        //-------------------------------
 //        ls.deletePosition(0);
 //        System.out.println("\nПосле\n" + ls.findCell(12));
 //        System.out.println(ls.findCell(4));
 //        System.out.println(ls.findCell(82));
 //        System.out.println(ls.findCell(44));
 
+        //-------------------------------
 //        ls.addDoubleConnected(23);
 //        System.out.println("\n\n" + ls.findCell(23));
 
-
+        //-------------------------------
 //        ArrayList s = new ArrayList();
 //        s.add(12);
 //        s.add(5);
@@ -52,23 +60,50 @@ public class ListSecond {
 //        System.out.println(s.size());
 
         //-------------------------------
-        ls.reverse();
-        System.out.println(ls.findElementAt(5));
-    }
-    MyCell top;//!!!!!
+//        ls.reverse();
+//        System.out.println(ls.findElementAt(5));
 
-//    he's gorgeous))) he's creating obj by input values
+        //-------------------------------
+//        ls.insertSorted(83);
+//        System.out.println();
+
+    }
+
+    static int mCount = 0;
+
+    public static String findNumberCell(MyCell cells){
+        if(cells != null) {
+            while (mCount <= 100) {
+                mCount++;
+                /**
+                 * костыли пошли
+                 */
+                while (mCount >= 100) {
+                        mCount++;
+                        return mCount + " : this cell - " + cells;
+                    }
+                return mCount + " : this cell - " + cells;
+                }
+
+
+        }
+        return "not numbers!!";
+    }
+
+    private MyCell top;//!!!!!
+
 
     //Добавление в связанный список константная операция.
     // Оно заключается в простом добавлении нового элемента в начало списка и модификации указателя так,
     // чтобы первый указатель был направлен к новому элементу.
-    public void insert(int i) {
+    public MyCell insert(int i) {
         MyCell myCell = new MyCell();
         myCell.setData(i);
         myCell.setNext(top);// newCell2 /указатель\ --->newCell1 /указатель\--->null
-        top = myCell;//сохраняем новую клетку первой как в стеке
+        return top = myCell;//сохраняем новую клетку первой как в стеке
         //в итоге получим  newCell2 --->newCell1 --->null
         //так как в top сохранилась newCell1
+
     }
 
 
@@ -194,5 +229,20 @@ public class ListSecond {
         top = prev;
     }
 
+    //-------------------------------
+    public void insertSorted(int data) {
+        MyCell previous = top;
+        if(previous == null || previous.getData() >= data){
+            insert(data);//add simple
+        } else{
+            while (previous.getNext() != null && previous.getNext().getData() < data) {
+                previous = previous.getNext();
+            }
+            MyCell cell = new MyCell();
+            cell.setData(data);
+            cell.setNext(previous.getNext());//привязка к след от previous
+            previous.setNext(cell);//привязка prev. к new cell
+        }
+    }
 
 }
