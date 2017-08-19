@@ -28,6 +28,7 @@ public class ListSecond {
                 ls.insert(data1),//461
         };
 
+
         for (MyCell i : cells) {
             System.out.println(findNumberCell(i));
         }
@@ -38,6 +39,8 @@ public class ListSecond {
         System.out.println(ls.findCell(12)+ " - " + data1);
         System.out.println(ls.findCell(4)+ " - " + data2);
         System.out.println(ls.findCell(44)+ " - " + data4);
+
+        System.out.println();
 
         //-------------------------------
 //        ls.deletePosition(0);
@@ -105,8 +108,6 @@ public class ListSecond {
         //так как в top сохранилась newCell1
 
     }
-
-
 
     public MyCell findPredecessor(int i) {
         return findPredecessorLogic(top, i);
