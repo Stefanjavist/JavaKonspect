@@ -15,7 +15,7 @@ public class ArrayStackOfStrings implements Iterable<String> {
 
     //basic methods
     public boolean isEmpty() {
-        return n ==0;
+        return n == 0;
     }
 
     public boolean isFull(){
