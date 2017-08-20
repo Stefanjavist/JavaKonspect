@@ -2,6 +2,7 @@ package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.Sortin
 
 public class SelectionSort {
 
+
     public static void main(String[] args) {
         int[] array = new int[]{
                 12,32,34,2,1
