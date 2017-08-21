@@ -72,9 +72,9 @@ public class ListSecond {
 
     }
 
-    static int mCount = 0;
+    private static int mCount = 0;
 
-    public static String findNumberCell(MyCell cells){
+    private static String findNumberCell(MyCell cells){
         if(cells != null) {
             while (mCount <= 100) {
                 mCount++;
