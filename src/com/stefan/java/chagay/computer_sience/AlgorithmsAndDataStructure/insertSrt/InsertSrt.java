@@ -3,7 +3,7 @@ package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.insert
 public class InsertSrt {
 
     private static int[] insertSrt(int[] list) {
-        int i, j, key, temp = 0;
+        int i, j, key, temp;
         for (i = 1; i < list.length; i++) {
             key = list[i];
             j = i - 1;
