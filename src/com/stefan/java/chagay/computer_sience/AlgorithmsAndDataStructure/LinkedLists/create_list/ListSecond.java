@@ -195,7 +195,7 @@ public class ListSecond {
         }
     }
 //-------------------------------
-    //another list
+    //another list, it's demo version
     //двухсвязный список
     //add cell after previous
     public void addDoubleConnected(int i) {
