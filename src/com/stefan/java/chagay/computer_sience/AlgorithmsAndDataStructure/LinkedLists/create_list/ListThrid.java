@@ -123,14 +123,15 @@ public class ListThrid {
     }
 
     public void reverse() {
-        Cell prev = null;
-        Cell next = top;
-        while(top != null) {
-            next = top.getNext();
-            top.setNext(prev);
-            prev = top;
-            top = next;
-        }
+       Cell prev = null;
+       Cell next = top;
+       while(next != null) {
+           next = top.getNext();
+           top.setNext(prev);
+           prev = top;
+           top = next;
+       }
+       top = prev;
     }
 
     public static void main(String[] args) {
@@ -148,17 +149,23 @@ public class ListThrid {
 
         System.out.println(listThrid.find(dataCell1));
         System.out.println(listThrid.find(dataCell2));
-        System.out.println(listThrid.find(dataCell3));
-        System.out.println(listThrid.find(dataCell4));
+        System.out.println(listThrid.find(dataCell3)+"\n");
 
-//        System.out.println("\n\ndelete|find");
+        listThrid.reverse();
+
+        System.out.println(listThrid.find(dataCell1));
+        System.out.println(listThrid.find(dataCell2));
+        System.out.println(listThrid.find(dataCell3));
+
+//        System.out.println("\n\n delete|find");
 //
 //        listThrid.delete(dataCell1);
 //        System.out.println(listThrid.find(dataCell1)+"\n");
-        listThrid.addPosition(dataCellPosition, 0);
-        System.out.println("\n" + listThrid.findPosition(0));
-        listThrid.deletePosition(0);
-        System.out.println("\n" + listThrid.findPosition(0)+"\n");
+//        listThrid.addPosition(dataCellPosition, 0);
+//        System.out.println("\n" + listThrid.findPosition(0));
+//        listThrid.deletePosition(0);
+//        System.out.println("\n" + listThrid.findPosition(0)+"\n");
+
     }
     //turn
     //double list
