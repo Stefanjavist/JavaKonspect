@@ -47,16 +47,19 @@ public class ResizingArrayStack<Item> implements Iterable <Item> {
      */
     public void push(Item item) {
         if(n == a.length) {
-            resize(2 * a.length);
+            resize( a.length * 2);
         } // double size of array if necessary
         a[n++] = item; // simple add item
     }
 
     public Item pop() {
-        if(!isEmpty()) {
+        if(isEmpty()) {
             throw new NoSuchElementException();
-        } Item item = a[n - 1];//???? why one instead a--
-        a[n -1]= null;//element become null
+        }/**
+         *!!!!!!!!!!!!!!!!!!!!!!!!!! n - 1
+         */
+        Item item = a[n - 1];//???? why one instead n--
+        a[n - 1] = null;//element become null
         n--;//and size array shrink
         //shrink size of array if necessary
         if(n > 0 && n == a.length/4) resize(a.length/2);//????
@@ -94,11 +97,14 @@ public class ResizingArrayStack<Item> implements Iterable <Item> {
     }
 
         public static void main(String[] args) throws IOException {
-            ResizingArrayStack<String> stack = new ResizingArrayStack<String>();
+            ResizingArrayStack <String> stack = new ResizingArrayStack<>();
+
             BufferedReader bs = new BufferedReader(new InputStreamReader(System.in));
             String newElemet = bs.readLine();
+
             while(!newElemet.isEmpty()) {
                 String item = bs.readLine();
+
                 if(!item.equals("-")) {
                     stack.push(item);
                 } else if(!stack.isEmpty()) {
