@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.insertSrt;
+package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.SortingAlgorithm.insertSrt;
 
 public class InsertSrt {
 
