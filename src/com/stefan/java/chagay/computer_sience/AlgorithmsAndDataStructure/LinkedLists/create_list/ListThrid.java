@@ -128,6 +128,7 @@ public class ListThrid {
        while(next != null) {
            next = top.getNext();
            top.setNext(prev);
+
            prev = top;
            top = next;
        }
@@ -167,6 +168,72 @@ public class ListThrid {
 //        System.out.println("\n" + listThrid.findPosition(0)+"\n");
 
     }
-    //turn
-    //double list
+
+//    public Cell find1(int data) {
+//        return findLogic(top, data);
+//    }
+//
+//    private Cell findLogic(Cell top, int data) {
+//        if(top == null) {
+//            return top;
+//        }
+//
+//        if(top.getData() == data) {
+//            return top;
+//        }
+//        return findLogic(top.getNext(), data);
+//    }
+//
+//   public Cell findPos(int ind)
+//   {
+//       if(ind == 0) {
+//           return null;
+//       }
+//
+//       Cell first = top;
+//       while (first!=null && ind-- >0) {
+//           first = first.getNext();
+//       }
+//       return first;
+//   }
+//
+//   private Cell findPred(int i) {
+//        return findPredLog(top, i);
+//   }
+//
+//   private Cell findPredLog(Cell top, int data) {
+//        if(top == null && top.getNext() == null) {
+//            return top;
+//        }
+//
+//        if(top.getNext().getData() == data) {
+//            return top;
+//        }
+//        return findPredLog(top.getNext(), data);
+//   }
+//
+//   private void detelePos(int index) {
+//        Cell currentPos = findPos(index);
+//        if(index == 0 || currentPos.getNext() == null) {
+//            top=currentPos.getNext();
+//            return;
+//        }
+//
+//        Cell pred = findPred(index - 1);
+//        if(pred != null) {
+//            currentPos.setNext(pred.getNext());
+//        }
+//   }
+//
+//   private void revers() {
+//       Cell prev = null;
+//       Cell next = top;
+//       while (next != null) {
+//           next = top.getNext();
+//           top.setNext(prev);
+//           prev = top;
+//           top = next;
+//       }
+//       top = prev;
+//   }
 }
