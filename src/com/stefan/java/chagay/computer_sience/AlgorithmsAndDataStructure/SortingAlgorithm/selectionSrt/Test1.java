@@ -29,7 +29,6 @@ public class Test1 {
                 if(arr[j] < arr[i]) {
                     nextMin = j;
 
-
                         int temp = arr[nextMin];
                         arr[nextMin] = arr[i];
                         arr[i] = temp;

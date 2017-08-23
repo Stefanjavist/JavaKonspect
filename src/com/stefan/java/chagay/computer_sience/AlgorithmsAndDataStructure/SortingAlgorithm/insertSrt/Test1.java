@@ -1,8 +1,6 @@
 package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.SortingAlgorithm.insertSrt;
 
-/**
- * Created by Stefan on 8/23/2017.
- */
+
 public class Test1 {
 
     public static void main(String[] args) {
@@ -23,7 +21,7 @@ public class Test1 {
 
             while (j >= 0 && arr[j] > key) {
                 temp = arr[j];
-                arr[j] = arr[i];//тут должна быть key, а не arr[i] т. к. мы сохранили в key число которое подставляем на позицию arr[j], а если поставим arr[i], то мы подставим число из пазиции arr[i], каторое будет уже перезаписано
+                arr[j] = key;//тут должна быть key, а не arr[i] т. к. мы сохранили в key число которое подставляем на позицию arr[j], а если поставим arr[i], то мы подставим число из пазиции arr[i], каторое будет уже перезаписано
                 //кароче нам нужно число, а не позиция
                 arr[j + 1] = temp;
                 j--;
