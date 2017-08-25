@@ -64,10 +64,13 @@ public class MargeSort {
 
 
     public static void main(String[] args) {
-        int[] arr = new int[] {
+        int [] arr = new int[]{
                 12, 5, 4, 16
         };
-    }
+
+        MargeSort margeSort = new MargeSort(arr);
+        System.out.println(margeSort);
+        }
 
 }
 
