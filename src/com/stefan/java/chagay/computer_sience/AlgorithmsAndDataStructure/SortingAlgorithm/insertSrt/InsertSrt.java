@@ -12,7 +12,7 @@ public class InsertSrt {
                 //swap
                 temp = list[j];
                 list[j] = key;//key = list[j + 1]
-                list[j + 1] = temp;//next element is key, but key equals list[j + 1]
+                list[j+1] = temp;//next element is key, but key equals list[j + 1]
 
                 j--;
             }
