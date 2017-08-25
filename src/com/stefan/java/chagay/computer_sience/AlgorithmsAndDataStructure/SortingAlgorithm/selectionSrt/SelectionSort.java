@@ -12,8 +12,6 @@ public class SelectionSort {
         for (int i : selectionSrt(array)) {
             System.out.println(i);
         }
-
-
     }
 
     public static int[] selectionSrt(int[] arr) {
