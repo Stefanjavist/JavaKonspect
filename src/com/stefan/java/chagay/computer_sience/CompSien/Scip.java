@@ -16,6 +16,6 @@ public class Scip {
             return  sum * counter;
         }
 
-        return factIter(sum*counter, counter +1, fact);
+        return factIter(sum*counter, counter + 1, fact);
     }
 }

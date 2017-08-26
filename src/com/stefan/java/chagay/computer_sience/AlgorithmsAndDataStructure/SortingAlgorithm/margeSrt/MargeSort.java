@@ -18,9 +18,9 @@ public class MargeSort {
 // check if low is smaller than high, if not then the array is sorted
         if (low < high) {
             // Get the index of the element which is in the middle
-            int middle = low + (high - low) / 2;
+            int middle = low + (high - low) / 2;//1
             // Sort the left side of the array
-            mergesort(low, middle);
+            mergesort(low, middle);//low = 0, middle = 1
             // Sort the right side of the array
             mergesort(middle + 1, high);
             // Combine them both
@@ -34,27 +34,27 @@ public class MargeSort {
             helper[i] = numbers[i];
         }
 
-        int i = low;
-        int j = middle + 1;
-        int k = low;
+        int low1 = low;
+        int middle1 = middle + 1;
+        int low2 = low;
         // Copy the smallest values from either the left or the right side back        }
 
         // to the original array
-        while (i <= middle && j <= high) {
-            if(helper[i] <= helper[j]) {
-            numbers[k] = helper[i];
-            i++;
+        while (low1 <= middle && middle1 <= high) {
+            if(helper[low1] <= helper[middle1]) {
+            numbers[low2] = helper[low1];
+            low1++;//3
             } else {
-                numbers[k] = helper[j];
-                j++;
+                numbers[low2] = helper[middle1];
+                middle1++;//2
             }
-            k++;
+            low2++;//3
         }
         // Copy the rest of the left side of the array into the target array
-        while (i <= middle) {
-            numbers[k] = helper[i];
-            k++;
-            i++;
+        while (low1 <= middle) {
+            numbers[low2] = helper[low1];
+            low2++;//3
+            low1++;//
         }
 
         return numbers;
@@ -69,7 +69,6 @@ public class MargeSort {
         };
 
         MargeSort margeSort = new MargeSort(arr);
-        System.out.println(margeSort);
         }
 
 }
