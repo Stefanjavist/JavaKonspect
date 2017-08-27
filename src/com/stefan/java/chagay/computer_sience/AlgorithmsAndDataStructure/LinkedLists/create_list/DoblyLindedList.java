@@ -22,7 +22,7 @@ public class DoblyLindedList <E>{
     }
 
     public void addFirst(E element) {
-        NodeDoubl<E> tmp = new NodeDoubl(element, head, null);
+        NodeDoubl<E> tmp = new NodeDoubl<>(element, head, null);
                 if(head != null) {
                     head.prev = tmp;
                 }//здесь всё дело в ссылках, а точнее использование и запись в них
@@ -41,7 +41,9 @@ public class DoblyLindedList <E>{
             tail.next = tmp;
         }tail =tmp;
 
-        if(head == null) {head = tmp;}
+        if(head == null) {
+            head = tmp;
+        }
         size++;
         System.out.println("adding: " + element);
     }
@@ -74,8 +76,8 @@ public class DoblyLindedList <E>{
             head.prev = null;
             size--;
 
-            System.out.println("deleted " + tmp.element);
-            return tmp.element;
+        System.out.println("deleted last Node: " + tmp.element);
+        return tmp.element;
     }
 
     public E removeLast() {
@@ -86,17 +88,19 @@ public class DoblyLindedList <E>{
         tail.next = null;
         size--;
 
-        System.out.println("delete: " + tmp.element);
+        System.out.println("deleted last Node: " + tmp.element);
         return tmp.element;
     }
 
         public static void main (String[] args) {
-        DoblyLindedList<Integer> dll = new DoblyLindedList();
+        DoblyLindedList<Integer> dll = new DoblyLindedList<>();
         dll.addFirst(22);
         dll.addFirst(30);
         dll.addLast(64);
         dll.addLast(11);
         dll.iterateForward();
+        dll.removeFirst();
+        dll.removeFirst();
         dll.removeFirst();
         dll.removeLast();
         dll.iterateBackward();
