@@ -18,13 +18,13 @@ public class MargeSort {
 // check if low is smaller than high, if not then the array is sorted
         if (low < high) {
             // Get the index of the element which is in the middle
-            int middle = low + (high - low) / 2;//1
+            int middle = low + (high - low) / 2;
             // Sort the left side of the array
-            mergesort(low, middle);//low = 0, middle = 1
+            mergesort(low, middle);
             // Sort the right side of the array
             mergesort(middle + 1, high);
             // Combine them both
-            merge(low, middle, high);
+            merge(low, middle, high);//middle после выполнения marge становится больше на 1
         }
     }
 
@@ -37,24 +37,24 @@ public class MargeSort {
         int low1 = low;
         int middle1 = middle + 1;
         int low2 = low;
-        // Copy the smallest values from either the left or the right side back        }
+        // Copy the smallest values from either the left or the right side back
 
         // to the original array
         while (low1 <= middle && middle1 <= high) {
             if(helper[low1] <= helper[middle1]) {
             numbers[low2] = helper[low1];
-            low1++;//3
+            low1++;
             } else {
                 numbers[low2] = helper[middle1];
-                middle1++;//2
+                middle1++;//grow middle
             }
-            low2++;//3
+            low2++;//current cell header array
         }
         // Copy the rest of the left side of the array into the target array
         while (low1 <= middle) {
             numbers[low2] = helper[low1];
-            low2++;//3
-            low1++;//
+            low2++;
+            low1++;
         }
 
         return numbers;
