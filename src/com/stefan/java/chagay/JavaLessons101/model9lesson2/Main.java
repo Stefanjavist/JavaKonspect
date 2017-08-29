@@ -7,10 +7,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-
             Test.mostValus(9, 5);
-
-
     }
 }
