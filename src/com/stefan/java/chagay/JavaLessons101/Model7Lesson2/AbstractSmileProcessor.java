@@ -8,6 +8,7 @@ public abstract class AbstractSmileProcessor implements ITest {
         final String result = text.replace(":)", "^^)");
         System.out.println(result);
     }
+
     protected abstract String readString();
 
 //    public static void main(String[] args) {

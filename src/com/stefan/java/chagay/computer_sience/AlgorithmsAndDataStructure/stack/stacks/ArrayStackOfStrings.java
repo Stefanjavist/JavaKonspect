@@ -32,7 +32,7 @@ public class ArrayStackOfStrings implements Iterator<String> {
     public String pop() {
         return items[--n];
         /**
-         * help
+         * my helps
         int x = 5, y = 5;
         System.out.println(++x); // outputs 6
         System.out.println(x); // outputs 6
@@ -45,7 +45,6 @@ public class ArrayStackOfStrings implements Iterator<String> {
     public Iterator<String> iterator() {
         return new ReverseArrayIterator();
     }
-
 
     public boolean hasNext() {
         return false;

@@ -5,30 +5,57 @@ public class SelectionSort {
 
     public static void main(String[] args) {
         int[] array = new int[]{
-                12,32,34,2,1
-//                5, 14,42,8,15
+                5,6,1,3
         };
 
-        for (int i : selectionSrt(array)) {
+        for (int i : selectionSrt1(array)) {
             System.out.println(i);
         }
     }
 
-    public static int[] selectionSrt(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if(arr[j] < arr[min]) {
-                    min = j;
+    
+    private static int [] selectionSrt1( int[] arr) {
 
-                    int temp = arr[i];
-                    arr[i] = arr[min];
-                    arr[min] = temp;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if(arr[i] > arr[j]) {
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
                 }
             }
+            
         }
-
         return arr;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }

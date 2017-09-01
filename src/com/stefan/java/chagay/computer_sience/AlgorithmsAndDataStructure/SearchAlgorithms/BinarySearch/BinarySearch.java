@@ -5,17 +5,17 @@ import static java.lang.Math.pow;
 
 public class BinarySearch {
 
-    private static void binSrearch(int[] arr, int number) {
+    private static void binSearch(int[] arr, int number) {
 
         int low = 0;
-        int high = 4;
+        int high = arr.length;
 
         while (low <= high) {
             int mid = (low + high) / 2;
             if (number == arr[mid]) {
                 System.out.println(mid);
                 return;
-            } else if (number > mid) {
+            } else if (number > arr[mid]) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
@@ -64,6 +64,9 @@ public class BinarySearch {
         int[] arr = new int[]{
                 1,2,3,4,5
         };
+
+        binSearch(arr, 4);
+
 
     }
 

@@ -9,7 +9,7 @@ public class PredefSmileProc extends AbstractSmileProcessor {
     }
 
     public static void main(String[] args) {
-        final PredefSmileProc predefSmileProc = new PredefSmileProc();
+        final AbstractSmileProcessor predefSmileProc = new PredefSmileProc();
         predefSmileProc.process();
     }
 

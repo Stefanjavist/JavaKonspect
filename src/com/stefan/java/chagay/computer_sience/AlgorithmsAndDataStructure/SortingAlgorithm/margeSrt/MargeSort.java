@@ -18,7 +18,7 @@ public class MargeSort {
 // check if low is smaller than high, if not then the array is sorted
         if (low < high) {
             // Get the index of the element which is in the middle
-            int middle = low + (high - low) / 2;
+            int middle = low + (high - low) / 2;//на перевой итерации было 0
             // Sort the left side of the array
             mergesort(low, middle);
             // Sort the right side of the array
@@ -65,11 +65,14 @@ public class MargeSort {
 
     public static void main(String[] args) {
         int [] arr = new int[]{
-                12, 5, 4, 16
+                21,33,23,4
         };
 
         MargeSort margeSort = new MargeSort(arr);
         }
+
+
+
 
 }
 

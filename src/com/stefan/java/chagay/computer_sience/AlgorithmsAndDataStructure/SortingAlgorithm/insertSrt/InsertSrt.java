@@ -22,12 +22,32 @@ public class InsertSrt {
 
     public static void main(String[] args) {
         int[] array = new int[]{
-                5, 3, 3686, 4, 324,
+                5,3,7,1
         };
 
-        for (int i : insertSrt(array)) {
+        for (int i : ijd(array)) {
             System.out.println(i);
         }
     }
+
+    private static int [] ijd(int [] arr){
+        int i, j, key, tmp = 0;
+        for (i = 1; i < arr.length ; i++) {
+            key = arr[i];
+            j = i - 1;
+            //
+//здесьучитывается сохраняемая переменная key, а не i!!!!!
+            while(j >= 0 && key < arr[j]) {
+                tmp = arr[j];
+                arr[j] = key;
+                arr[j + 1] = tmp;
+                j--;
+            }
+
+        }
+        return arr;
+
+    }
+
 
 }

@@ -20,7 +20,7 @@ public class BobbleSrt {
     }
 
     public static void main(String[] args) {
-        int[] list = new int[]{4, 3, 9, 6, 7};
+        int[] list = new int[]{4, 3, 9, 6, 7, 1};
         for(int i : bubbleSort(list)){
             System.out.println(i);
         }
