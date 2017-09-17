@@ -97,7 +97,7 @@ public class Model6Lesson3 {
         //3 another realisation
         private static void print3An() {
         //String to number
-            Integer a = Integer.valueOf(123).intValue();
-            System.out.println(a);
+            Integer a = Integer.valueOf("123");
+            System.out.println(a+12);
         }
 }

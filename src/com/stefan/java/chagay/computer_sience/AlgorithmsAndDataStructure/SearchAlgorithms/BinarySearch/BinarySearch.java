@@ -1,5 +1,12 @@
 package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.SearchAlgorithms.BinarySearch;
 
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
+import java.util.Arrays;
+
+import static edu.princeton.cs.algs4.BinarySearch.rank;
 import static java.lang.Math.abs;
 import static java.lang.Math.pow;
 
@@ -60,15 +67,55 @@ public class BinarySearch {
         System.out.println(guess+" is close enough to square root of " + a + ".Guesses " + guesses);
     }
 
-    public static void main(String[] args) {
-        int[] arr = new int[]{
-                1,2,3,4,5
-        };
-
-        binSearch(arr, 4);
-
-
+    private static int recurSearch(int [] arr, int num) {
+        return recurLogic(0, arr.length, arr, num);
     }
 
+    private static int recurLogic(int low, int high, int[] arr, int num) {
+        int mid = (low + high) / 2;
+        if(arr[mid] == num) {
+            return mid;
+        } else if(arr[mid] > num) {
+            return recurLogic(low, mid - 1, arr, num);
+        } else{
+            return recurLogic(mid + 1, high, arr, num);
+        }
+    }
+//          main1
+//    public static void main(String[] args) {
+//        int[] arr = new int[]{
+//                1,2,3,4,5
+//        };
+//
+//    }
+
+    public static void main(String[] args) {
+        //noinspection deprecation
+        int[] whiteList = In.readInts(args[0]);
+        Arrays.sort(whiteList);
+        while(!StdIn.isEmpty()) {
+            int key = StdIn.readInt();
+            //noinspection deprecation
+            if(rank(key, whiteList) < 0) {
+                StdOut.println(key);
+            }
+        }
+    }
+
+    public static int rank(int key, int[] whileList) {
+        int lo = 0;
+        int hi = whileList.length;
+        while (lo <= hi) {
+            int mid = (lo + hi) / 2;
+            if(whileList[mid] == key) {
+                return mid;
+            } else if(whileList[mid] > key) {
+                hi = mid - 1;
+            } else {
+                lo = mid + 1;
+            }
+        }
+        return -1;
+    }
 }
 

@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         final Tupe student1 = new Tupe(1, 112);
-        final String name = (String) student1.getLeft() ;//!!!!! here getRight Integer cannot be cast to java.lang.String
+        final String name = (String) student1.getLeft() ;//!!!!! here getLeft Integer cannot be cast to java.lang.String
         System.out.print(name);
     }
 }

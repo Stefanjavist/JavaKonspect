@@ -1,16 +1,16 @@
-package com.stefan.java.chagay.computer_sience.CompSien;
+package com.stefan.java.chagay.computer_sience.examples;
 
 
 public class Scip {
 
     public static void main(String[] args) {
 
-        int af = factIter(1,1,3);
+        long af = factIter(1,1,50);
         System.out.println(af);
 
     }
 
-    private static int factIter(int sum, int counter, int fact) {
+    private static long factIter(long sum, int counter, int fact) {
 
         if (counter == fact) {
             return  sum * counter;

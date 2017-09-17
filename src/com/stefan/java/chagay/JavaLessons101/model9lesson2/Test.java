@@ -3,15 +3,11 @@ package com.stefan.java.chagay.JavaLessons101.model9lesson2;
 
 public class Test {
 
-    public static int mostValus(int x, int y) {
+    public static int mostValus(int x, int y) throws LolException{
         if(x > y){
-            throw new TestRuntimeExc();
+            throw new LolException();
         }
-
         return y;
     }
-
-
-
 
 }

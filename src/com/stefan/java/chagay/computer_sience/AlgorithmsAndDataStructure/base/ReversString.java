@@ -17,8 +17,10 @@ public class ReversString {
             a[j] = tmp;
         }
 
-        System.out.println(a);
-
+        String str = "hello";
+        char[] b = str.toCharArray();
+//        System.out.println(a);
+        System.out.println(revers(b));
     }
     /*
      //Конвертируем String в char и char в String на java
@@ -44,5 +46,17 @@ public class ReversString {
         return str.replaceAll(Character.toString(c), "");
     }
      */
+
+
+    private static char[] revers(char[] str) {
+
+        int i, j;
+        for (i = 0, j = str.length - 1; i < j; i++, j--) {
+            char tmp = str[i];
+            str[i] = str[j];
+            str[j] = tmp;
+        }
+        return str;
+    }
 
 }
