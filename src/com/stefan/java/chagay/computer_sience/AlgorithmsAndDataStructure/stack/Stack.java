@@ -4,7 +4,7 @@ package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.stack;
 public class Stack {
 
     public static void main(String[] args) {
-        Stack stack = new Stack();
+        Stack stack = new Stack(6);
         System.out.println(stack.isEmpty());
         System.out.println("top element - " + stack.peek());
         stack.push(1);      // ^
@@ -28,12 +28,11 @@ public class Stack {
 
     }
 
-    private final int MAX_SIZE = 6;
-
+    private int MAX_SIZE;
     private int top = 0;
 
-    public Stack(){
-
+    Stack(int MAX_SIZE){
+        this.MAX_SIZE = MAX_SIZE;
     }
     int[] stack = new int[MAX_SIZE];
 

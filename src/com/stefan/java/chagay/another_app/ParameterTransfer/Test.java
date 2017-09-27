@@ -27,7 +27,7 @@ public class Test {
     }
 
     public void test2(int i){
-        i=6;// [2]-ая эта переменная никак не влияет на перевую переменную
+        i=6;// [2]-ая переменная никак не влияет на перевую переменную
         System.out.println("i = "+i);
     }
 
@@ -44,6 +44,8 @@ public class Test {
     }
 
     public void test5(Car car) {
+        System.out.println( car.getName());
+
     }
 
 }

@@ -1,62 +1,91 @@
 package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.SortingAlgorithm.margeSrt;
 
 
+
 public class Test1 {
 
-    private int [] numbers;
+    private int [] arr;
     private int [] helper;
-    private int num;
+
+    private int count;
 
     public Test1(int[] arr) {
-        this.numbers = arr;
-        this.num = arr.length;
-        this.helper = new int[num];
-        margeSort(0, num - 1);
+        count = arr.length;
+        this.arr = arr;
+        this.helper = new int[count];
+        merge(0, count - 1);
     }
 
-    private void margeSort(int low, int high) {
-        if(low < high) {
-            int middle = low + (high - low) / 2;//2
-            margeSort(low, middle);
-            margeSort(middle+ 1, high);
-            marge(low, middle, high);
+    private void merge(int lo, int hi) {
+        if(lo < hi){
+            int mid = lo + (hi - lo) / 2;
+            merge(lo, mid);
+            merge(mid+1, hi);
+        logicMerge(lo, mid, hi);
+
         }
     }
 
-    private int [] marge(int low, int middle, int high) {
-        for (int i = low; i <= high; i++) {
-            helper[i] = numbers[i];
+    private int[] logicMerge(int lo, int mid, int hi) {
+        for (int i = lo; i < hi; i++) {
+            helper[i] = arr[i];
         }
 
-        int low1 = low;
-        int low2 = low;
-        int middle1 = middle + 1;
+        int lo1 = lo;
+        int lo2 = lo;
+        int mid1 = mid+1;
 
-        while(low1 <= middle && middle1 <= high) {
-            if(helper[low1] >= helper[middle1]) {
-                numbers[low2] = helper[middle1];
-                middle1++;
-            }  else{
-                numbers[low2] = helper[low1];
-                low1++;
+        while(lo1 <= mid && mid1 <= hi) {
+            if(helper[lo1] >= helper[mid1]) {
+                arr[lo2] = helper[mid1];
+            lo1++;
+            }else {
+                arr[lo2] = helper[lo1];
+                mid1++;
             }
-            low2++;
+            lo2++;
         }
-//этот цикл до заполняет массив, а точнее последнюю ячейку
-        while(low1 <= middle) {
-            numbers[low2] = helper[low1];
-            low1++;
-            low2++;
+
+        while(lo1 <= mid) {
+            arr[lo2] = helper[lo1];
+            lo1++;
+            lo2++;
         }
-        return numbers;
+
+        return arr;
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[] {
-                21,33,23,4
+        int[] arr = new int[]{
+                21, 33, 23, 4
         };
 
         Test1 test1 = new Test1(arr);
+        for (int i: test1.arr
+             ) {
+            System.out.println(i);
+        }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

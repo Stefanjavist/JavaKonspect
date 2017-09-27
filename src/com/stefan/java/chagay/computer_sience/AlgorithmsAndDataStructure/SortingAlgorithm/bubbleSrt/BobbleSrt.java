@@ -21,9 +21,40 @@ public class BobbleSrt {
 
     public static void main(String[] args) {
         int[] list = new int[]{4, 3, 9, 6, 7, 1};
-        for(int i : bubbleSort(list)){
+        for(int i : bubble(list)){
             System.out.println(i);
         }
     }
+
+    private static int[] bubble(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if(arr[j] > arr[j+1]){//++j or j+=1 - это влияет на все переменные!!!
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+
+        }
+        return arr;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

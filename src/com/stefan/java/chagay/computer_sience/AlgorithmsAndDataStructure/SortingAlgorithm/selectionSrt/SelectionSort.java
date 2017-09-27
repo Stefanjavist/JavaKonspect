@@ -2,18 +2,6 @@ package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.Sortin
 
 public class SelectionSort {
 
-
-    public static void main(String[] args) {
-        int[] array = new int[]{
-                5,6,1,3
-        };
-
-        for (int i : selectionSrt1(array)) {
-            System.out.println(i);
-        }
-    }
-
-    
     private static int [] selectionSrt1( int[] arr) {
 
         for (int i = 0; i < arr.length; i++) {
@@ -24,11 +12,34 @@ public class SelectionSort {
                     arr[i] = temp;
                 }
             }
-            
+
         }
         return arr;
     }
-    
+
+    public static void main(String[] args) {
+        int[] array = new int[]{
+                5,6,1,3
+        };
+
+        for (int i : selectS(array)) {
+            System.out.println(i);
+        }
+    }
+
+    private static int[] selectS(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length ; j++) {
+                if(arr[i] > arr[j]) {
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
     
     
     

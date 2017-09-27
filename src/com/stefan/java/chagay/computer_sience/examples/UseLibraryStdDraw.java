@@ -27,7 +27,7 @@ public class UseLibraryStdDraw {
 //        int N = 50;
 //        double[] a = new double[N];
 //        for (int i = 0; i < N; i++)
-//                  a[i] = StdRandom.random();
+//                  a[i] = StdRandom.uniform();
 //            for (int j = 0; j < N; j++) {
 //                double x = 1.0*j/N;
 //                double y = a[j]/2.0;
@@ -41,7 +41,7 @@ public class UseLibraryStdDraw {
         int N = 50;
         double[] a = new double[N];
         for (int i = 0; i < N; i++)
-                a[i] = StdRandom.random();
+                a[i] = StdRandom.uniform();
             Arrays.sort(a);
             for (int j = 0; j < N; j++) {
                 double x = 1.0*j/N;

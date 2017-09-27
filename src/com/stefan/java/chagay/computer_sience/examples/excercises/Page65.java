@@ -1,100 +1,19 @@
-package com.stefan.java.chagay.computer_sience.examples.excercises_page65;
+package com.stefan.java.chagay.computer_sience.examples.excercises;
 
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.ST;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
-import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+public class Page65 {
 
-public class Test {
-
-        static String a = "XxxooO";
-        static String b = "a";
     public static void main(String[] args) {
-//        int N = 12;
-//        long []arr = new long[N];
-//        for (int j= 0; j < N; j++) {
-//        arr[j]=F(j);
+//        while (!StdIn.isEmpty()) {
+//            String st = StdIn.readLine();
+//            String[] splitText = st.split(" ");//divide текст между заданным символом(" ")
 //
-////            StdOut.println(N + " " + F(N));
+//            test1_1_21(splitText[0], splitText[1], splitText[2]);
 //        }
-//            for (int i = 0; i < N; i++) {
-//                System.out.println(i+" "+arr[i]);
-//            }
-//        test1_1_21("lol", 3, 4);
-//        String str = StdIn.readLine();
-//        while (!str.isEmpty()) {
-//            str = StdIn.readString();
-//        }
-//
-//        int n = str.length();
-//        char[] charStr = new char[n];
-//        for (int i = 0; i <str.length() ; i++) {
-//            charStr[i] = str.charAt(i);
-//            }
-
-//        C:\Program Files\Java\jre1.8.0_131\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
-//        C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\
+        System.out.println(mathInduction(14 , 6));
     }
-
-
-        //    Базовые конструкции.
-//            %s → String или toString().
-//
-//    printf("Hello %s!", "World"); //  "Hello World!"
-//      %n → Перенос строки.
-//
-//    Byte, Short, Int, Long.
-//      %d → В десятеричном.
-//            %x → В шестнадцатеричном.
-//
-//            %7d → В десятеричном. Минимальная ширина строки 7 знаков.
-//
-//            printf("%7d", 1); //  "      1"
-//      %07d → Минимальная ширина строки 7 знаков. Начало забить нулями.
-//
-//            printf("%07d", 1); //  "0000001"
-//    Float, Double.
-//      %f → Десятичное  число с точкой.
-//            %e → Десятичное  число с точкой и экспонентой.
-//
-//            %.10f → С точностью 10 знаков после запятой.
-//
-//            printf("%.10f", Math.PI); //  "3,1415926536"
-//    Date, Calendar.
-//      %tF → Дата в формате "год-месяц-день".
-//
-//    printf("%tF", new Date()); //  "2011-01-27"
-//      %tT → Время в формате "час:минута:секунда".
-//
-//    printf("%tT", new Date()); //  "22:42:37"
-//-------------------------
-//    public static boolean getXO (String str) {
-////        str = str.toLowerCase();
-////        return str.replace("o", "").length() == str.replace("x","").length();
-////      my decision is below))))
-//        char x = 'x';
-//        char x1 = 'X';
-//        char o = 'o';
-//        char o1 = 'O';
-//        int xIn = 0;
-//        int oIn = 0;
-//
-//        for (int i = 0; i < str.length(); i++) {
-//            char tmp = str.charAt(i);
-//            if(x == tmp || x1 == tmp) {
-//                xIn++;
-//            } else if(o == tmp || o1 == tmp) {
-//                oIn++;
-//            }
-//        }
-//        return xIn == oIn;
-//
-//    }
-
 
     //easy test1
     private static boolean test1_1_3(int a, int b, int c) {
@@ -255,26 +174,43 @@ public class Test {
     }
 
     //rating of students
-    private static void test1_1_21(String st, int num1, int num2) {
-        int result = num1 / num2;
-        System.out.printf("%s", st);
+
+    /**
+     * use split method String!!!!!!
+     * String s = "stefan 5 7";
+     *String[] st = s.split(" ");
+     *System.out.println(st[1] + st[2]);
+     * @param st
+     * @param num1
+     * @param num2
+     */
+    private static void test1_1_21(String st, String num1, String num2) {
+        double a = Double.parseDouble(num1);
+        double b = Double.parseDouble(num2);
+        double result = a / b;
+        System.out.printf("%s - name, %.3f / %.3f = %5.3f\n",st, a, b, result);
     }
 
-    private static int test1_1_22Rank(int fNum, int[] a) {
+
+    private static int test1_1_22Rank(int key, int[] a) {
         String deep = "";
-        return rank(fNum, a, 0, a.length - 1, deep);
+        return rank(key, a, 0, a.length - 1, deep);
     }
 
     private static int rank(int key, int[] arr, int lo, int hi, String deep) {
-        char cha = ' ';
+        char cha = '+';
         if(lo > hi) return -1;
 
         int mid = lo+(hi-lo)/2;
         String step = deep+cha;
-        StdOut.printf("deep-%s, lo - %d, hi - %d \n", step, lo, hi);
-        if(arr[mid] > key) return rank(key, arr, lo, mid-1, step);
-        if(arr[mid] < key) return rank(key, arr, mid+1, hi, step);
-        else return mid;
+        StdOut.printf("|%s| lo - %d, hi - %d \n", step, lo, hi);
+        if(arr[mid] == key) {
+            return mid;
+        }else if(arr[mid] > key){
+            return rank(key, arr, lo, mid-1, step);}
+            else  {
+            return rank(key, arr, mid+1, hi, step);
+        }
     }
 
     private static int test1_1_24(int p, int q) {
@@ -282,5 +218,25 @@ public class Test {
         int r = p % q;
         System.out.println(p + " " + q);
         return test1_1_24(q, r);
+    }
+
+
+    private static String mathInduction(int a, int b) {
+        int r = test1_1_25(a, b);
+        int aos = a%r;
+        int ash = a/r;
+        int bos = b%r;
+        int bsh = b/r;
+        int checkb = r * bsh + bos;
+        int checka = r * ash + aos;
+        if(checka+checkb == a+b) return "Ok";
+        return "Error";
+
+    }
+
+    private static int test1_1_25(int a, int b) {
+        if(b==0) return a;
+        int r = a % b;
+        return test1_1_25(b, r);
     }
 }

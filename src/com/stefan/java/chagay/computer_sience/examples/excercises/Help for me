@@ -1,0 +1,85 @@
+    Базовые конструкции.
+            %s → String или toString().
+
+    printf("Hello %s!", "World"); //  "Hello World!"
+      %n → Перенос строки.
+
+    Byte, Short, Int, Long.
+      %d → В десятеричном.
+            %x → В шестнадцатеричном.
+
+            %7d → В десятеричном. Минимальная ширина строки 7 знаков.
+
+            printf("%7d", 1); //  "      1"
+      %07d → Минимальная ширина строки 7 знаков. Начало забить нулями.
+
+            printf("%07d", 1); //  "0000001"
+    Float, Double.
+      %f → Десятичное  число с точкой.
+            %e → Десятичное  число с точкой и экспонентой.
+
+            %.10f → С точностью 10 знаков после запятой.
+
+            printf("%.10f", Math.PI); //  "3,1415926536"
+    Date, Calendar.
+      %tF → Дата в формате "год-месяц-день".
+
+    printf("%tF", new Date()); //  "2011-01-27"
+      %tT → Время в формате "час:минута:секунда".
+
+    printf("%tT", new Date()); //  "22:42:37"
+
+_________________________________
+реализация на всякий случай
+    int N = 12;
+    //        long []arr = new long[N];
+    //        for (int j= 0; j < N; j++) {
+    //        arr[j]=F(j);
+    //
+    ////            StdOut.println(N + " " + F(N));
+    //        }
+    //            for (int i = 0; i < N; i++) {
+    //                System.out.println(i+" "+arr[i]);
+    //            }
+    //        test1_1_21("lol", 3, 4);
+    //        String str = StdIn.readLine();
+    //        while (!str.isEmpty()) {
+    //            str = StdIn.readString();
+    //        }
+    //
+    //        int n = str.length();
+    //        char[] charStr = new char[n];
+    //        for (int i = 0; i <str.length() ; i++) {
+    //            charStr[i] = str.charAt(i);
+    //            }
+
+    //        int[] vals = new int[args.length];
+    //        for (int i = 0; i < args.length; i++)
+    //            vals[i] = Integer.parseInt(args[i]);
+    //        Arrays.sort(vals);
+
+            //test1_1_22Rank
+    //        while(!StdIn.isEmpty()){
+    //            int key = StdIn.readInt();
+    //            if(test1_1_22Rank(key, vals) == -1) {
+    //                StdOut.println(key);
+    //            }else {
+    //                System.out.println("indicate the position (+ it's deep)");
+    //            }
+    //        }
+
+    //        int i = 0;
+    //        int[] arr = new int[2];
+    //        while(!StdIn.isEmpty()) {
+    //            int inp=StdIn.readInt();
+    //            arr[i] = inp;
+    //            if (i == arr.length-1) {
+    //                System.out.println(test1_1_24(arr[0], arr[1]));
+    //                return;
+    //            }
+    //            i++;
+    //        }
+
+
+
+    //        System.out.println(test1_1_24(key));
