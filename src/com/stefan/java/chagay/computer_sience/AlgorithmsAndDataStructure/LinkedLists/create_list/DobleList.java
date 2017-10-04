@@ -5,20 +5,10 @@ import java.util.NoSuchElementException;
 
 public class DobleList<T> {
     //first node is this head and tail concurrently
-    private Node head;  // ---prev|head|next---
-    private Node tail;  // ---prev|tail|next---
-    private String first;
-    private String last;
-    private String mistake;
+    private Node head;
+    private Node tail;
     private int size;
 
-
-    public DobleList() {
-        size = 0;
-        mistake = "Error not found Node";
-        last = "adding new Node in the last: ";
-        first = "adding new Node in the first: ";
-    }
 
     public static void main(String[] args) {
         DobleList<String> dl = new DobleList<String>();
@@ -28,14 +18,10 @@ public class DobleList<T> {
         dl.lastInsert("you");
         dl.lastInsert("?");
 
+        dl.iF();
         dl.firstRemove();
         dl.lastRemove();
-        dl.lastRemove();
-        dl.lastRemove();
-        dl.sizeList();
-
         dl.iB();
-        dl.iF();
     }
 
     private void sizeList() {
@@ -45,77 +31,63 @@ public class DobleList<T> {
     private T lastRemove() {
         if(size == 0) throw new NoSuchElementException();
 
-        Node<T> tmp = tail;
+        Node tmp = tail;
         tail = tail.prev;
         tail.next = null;
         size--;
-        System.out.println("delete - "+tmp.data);
         return tmp.data;
+
     }
 
-    private T firstRemove() {
-        if(size == 0) throw new NoSuchElementException();
+    private T firstRemove() throws NullPointerException{
+        if(size == 0) throw new NullPointerException();
 
-        Node<T> tmp = head;
+        Node tmp = head;
         head = head.next;
         head.prev = null;
         size--;
-        System.out.println("delete - "+tmp.data);
         return tmp.data;
     }
 
     private void firstInsert(T data) {
-        Node newNode = new Node(data, head, null);
-        if (head != null) {
-          head.prev = newNode;//!!!!!1
-        }
-        head = newNode;
-
-        if(tail == null) {
-            tail = newNode;
-        }
+        Node tmp = new Node(data, head, null);
+        if(head != null ) {head.prev = tmp;}
+        head = tmp;
+        if(tail == null) { tail = tmp;}
         size++;
-        System.out.println(first + newNode.data);
     }
 
     private void lastInsert(T data) {
-        Node newNode = new Node(data, null, tail);
-        if (tail != null) {
-            tail.next = newNode;//!!!!!
-        }
-        tail = newNode;
-
-        if(head == null) {
-            head = newNode;
-        }
+        Node tmp = new Node(data, null, tail);
+        if(tail != null) {tail.next = tmp;}
+        tail = tmp;
+        if(head == null) { head = tmp;}
         size++;
-        System.out.println(last + newNode.data);
     }
 
     private void iF() {
         System.out.println("iterate frontward");
-        Node<T> node = head;
-        while (node != null) {
-            System.out.println(node.data);
-            node = node.next;
+        Node tmp = head;
+        while (tmp != null) {
+            System.out.println(tmp.data);
+            tmp = tmp.next;
         }
     }
 
     private void iB() {
         System.out.println("iterate backward");
-        Node<T> node = tail;
-        while(node != null) {
-            System.out.println(node.data);
-            node = node.prev;
+        Node tmp = tail;
+        while (tmp != null) {
+            System.out.println(tmp.data);
+            tmp = tmp.prev;
         }
     }
 
 
     /**
      * nodes
-     * @param <T>
      */
-    private class Node<T> {
+    private class Node {
         private T data;
         private Node next;
         private Node prev;
@@ -126,29 +98,6 @@ public class DobleList<T> {
             this.prev = prev;
         }
 
-        public T getData() {
-            return data;
-        }
-
-        public void setData(T data) {
-            this.data = data;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
-
-        public Node getPrev() {
-            return prev;
-        }
-
-        public void setPrev(Node prev) {
-            this.prev = prev;
-        }
     }
 
 }
