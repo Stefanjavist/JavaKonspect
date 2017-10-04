@@ -5,7 +5,7 @@ public class Stack {
 
     public static void main(String[] args) {
         Stack stack = new Stack(6);
-        System.out.println(stack.isEmpty());
+//        System.out.println(stack.isEmpty());
         System.out.println("top element - " + stack.peek());
         stack.push(1);      // ^
         stack.push(54);     // | ...
@@ -19,9 +19,6 @@ public class Stack {
         }
         System.out.printf("Stack is full %s\n", stack.isFull()?"true":"false");
         System.out.printf("Stack is empty %s\n", stack.isEmpty()?"true":"false");
-
-
-
 //        System.out.println(stack.peek());
 //        stack.push(23);
 //        System.out.println("\n"+stack.isPop(23));
@@ -30,11 +27,12 @@ public class Stack {
 
     private int MAX_SIZE;
     private int top = 0;
+    private int[] stack;
 
     Stack(int MAX_SIZE){
         this.MAX_SIZE = MAX_SIZE;
+        stack = new int[MAX_SIZE];
     }
-    int[] stack = new int[MAX_SIZE];
 
 
     //Basic Operations
@@ -72,8 +70,7 @@ public class Stack {
 
     private void push(int data) {
         if (!isFull()) {
-            top = top + 1;
-            stack[top] = data;
+            stack[top++] = data;
             return;
         }
         System.out.println("Error stack is full");

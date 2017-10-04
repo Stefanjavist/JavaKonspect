@@ -54,6 +54,10 @@ public class ArrayStackOfStrings implements Iterator<String> {
         return null;
     }
 
+    public String peek() {
+        return items[n];
+    }
+
     // an iterator, doesn't implement remove() since it's optional
     private class ReverseArrayIterator implements Iterator<String> {
         private int i = n - 1;
@@ -85,6 +89,10 @@ public class ArrayStackOfStrings implements Iterator<String> {
 
         while (!string.isEmpty()) {
             string = br.readLine();
+            if(string.equals("--")){
+                System.out.println(stack.peek());
+                continue;
+            }
             if (!string.equals("-")) {
                 stack.push(string);
                 System.out.print("stack full? " + stack.isFull() + "\n");
