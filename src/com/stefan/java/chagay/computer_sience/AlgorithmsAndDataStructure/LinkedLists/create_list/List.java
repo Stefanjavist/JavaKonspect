@@ -1,7 +1,5 @@
 package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.LinkedLists.create_list;
 
-import com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.LinkedLists.data.Node;
-
 public class List {
 
 /*
