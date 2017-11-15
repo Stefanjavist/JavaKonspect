@@ -6,9 +6,9 @@ public class TerminationCondition {
         Book novel = new Book(true);
         //right clear
         novel.checkIn();
-        //теряем ссылку, забыли про очистку
+        //lose refer, forget clear it
         new Book(true);
-        //принуд сборка мусора и finalize
+        //compulsory garbage collection, finalize
         System.gc();
     }
 }
