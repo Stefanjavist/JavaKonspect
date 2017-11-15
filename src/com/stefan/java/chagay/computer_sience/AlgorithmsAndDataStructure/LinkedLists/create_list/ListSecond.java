@@ -1,7 +1,6 @@
 package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.LinkedLists.create_list;
 
 
-import com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.LinkedLists.data.MyCell;
 
 public class ListSecond {
 

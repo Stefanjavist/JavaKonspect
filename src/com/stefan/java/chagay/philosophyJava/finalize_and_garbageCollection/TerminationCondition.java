@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.another_app.philosophyJava.finalize_and_garbageCollection;
+package com.stefan.java.chagay.philosophyJava.finalize_and_garbageCollection;
 
 
 public class TerminationCondition {

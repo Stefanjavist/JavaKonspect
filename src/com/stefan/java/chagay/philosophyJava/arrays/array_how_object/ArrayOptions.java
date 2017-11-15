@@ -1,7 +1,7 @@
-package com.stefan.java.chagay.another_app.philosophyJava.arrays.array_how_object;
+package com.stefan.java.chagay.philosophyJava.arrays.array_how_object;
 
 
-import com.stefan.java.chagay.another_app.philosophyJava.arrays.feature.BerylliumSphere;
+import com.stefan.java.chagay.philosophyJava.arrays.feature.BerylliumSphere;
 
 import java.util.Arrays;
 

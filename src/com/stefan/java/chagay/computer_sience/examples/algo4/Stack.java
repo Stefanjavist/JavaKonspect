@@ -1,59 +1,33 @@
 package com.stefan.java.chagay.computer_sience.examples.algo4;
 
-import edu.princeton.cs.algs4.StdIn;
 
 public class Stack<T> {
 
-    private int count = 0;
-    private int MAX_SIZE;
-    private T[] var;
-
-    public Stack(int MAX_SIZE) {
-        this.MAX_SIZE = MAX_SIZE;
-         var = (T[]) new Object[MAX_SIZE];
+    
+	private final int MAX_SIZE = 100;
+	private final int MIN_SIZE = 0;
+    private int[] arr =  new int[MAX_SIZE];
+    private int counter = 0;
+    
+    
+    public int put(int item) {
+    	if(arr.length == MAX_SIZE) {
+    		return -1;
+    	}
+    	
+    	arr[counter++] = item;
+    	return 0;
     }
-
-    public void push(T element) {
-        var[count++] = element;
+    
+    public void push() {
+    	if(arr.length == MIN_SIZE) {
+    		System.out.println("lol");
+    	}
+    	arr[counter] = arr[--counter];
     }
-
-    public T pop() throws NullPointerException{
-        if(isEmpty()) throw new NullPointerException();
-
-        T element = var[--count];
-        var[count] = null;
-        return element;
+    
+    public void peek() {
+    	System.out.println("Peek boy: "+ arr[arr.length - 1]);
     }
-
-    //count need reduce to one because last element array it's [n-1]
-    public T peek() {
-        return var[count-1];
-    }
-
-    public int size() {
-        return count;
-    }
-
-    public boolean isEmpty() {
-        return count == 0;
-    }
-
-    public static void main(String[] args) {
-        Stack<String> stack = new Stack<>(5);
-        while(!StdIn.isEmpty()) {
-            String st = StdIn.readLine();
-
-            if (st.equals("--")) {
-                System.out.println("see last element: " + stack.peek());
-            }
-
-            if (!st.equals("-")) {
-                stack.push(st);
-            } else {
-                System.out.print("delete element: " + stack.pop() + " ");
-            }
-        }
-        System.out.println("Size array = " + stack.size());
-        }
-    }
+}
 

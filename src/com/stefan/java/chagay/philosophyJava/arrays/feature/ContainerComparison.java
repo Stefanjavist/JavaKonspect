@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.another_app.philosophyJava.arrays.feature;
+package com.stefan.java.chagay.philosophyJava.arrays.feature;
 
 
 import java.util.ArrayList;

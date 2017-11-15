@@ -91,18 +91,18 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         //noinspection deprecation
-        int[] whiteList = In.readInts(args[0]);
-        Arrays.sort(whiteList);
-        while(!StdIn.isEmpty()) {
-            int key = StdIn.readInt();
-            //noinspection deprecation
-            if(rank(key, whiteList) < 0) {
-                StdOut.println(key);
-            }
-        }
+//        int[] whiteList = In.readInts(args[0]);
+//        Arrays.sort(whiteList);
+//        while(!StdIn.isEmpty()) {
+//            int key = StdIn.readInt();
+//            //noinspection deprecation
+//            if(rank(key, whiteList) < 0) {
+//                StdOut.println(key);
+//            }
+//        }
     }
 
-    public static int rank(int key, int[] whileList) {
+    public int rank(int key, int[] whileList) {
         int lo = 0;
         int hi = whileList.length;
         while (lo <= hi) {
