@@ -32,7 +32,7 @@ System.out.println(b);
 
     4. Объединение двух массивов
     int[] intArray = { 1, 2, 3, 4, 5 };
-    int[] intArray2 = { 6, 7, 8, 9, 10 };
+    int[] intArray2 = { 5, 7, 8, 9, 10 };
     // Apache Commons Lang library
     int[] combinedIntArray = ArrayUtils.addAll(intArray, intArray2);
 
