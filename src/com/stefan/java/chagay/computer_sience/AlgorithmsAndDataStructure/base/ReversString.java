@@ -4,59 +4,97 @@ package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.base;
 public class ReversString {
 
     public static void main(String[] args) {
-        String string = "hello world";
-        char[] a = string.toCharArray();
+        String str = "Hello";
+        char[] chars = str.toCharArray();
 
-        int length = a.length;
+        int len = chars.length;
+        int i,j;
         char tmp;
-        int i, j;
 
-        for (i = 0, j = length - 1; i < j; i++, j--) {
-            tmp = a[i];
-            a[i] = a[j];
-            a[j] = tmp;
+        for (i = 0, j = len-1; i < j; i++, j--) {
+            tmp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = tmp;
         }
 
-        String str = "hello";
-        char[] b = str.toCharArray();
-//        System.out.println(a);
-        System.out.println(revers(b));
-    }
-    /*
-     //Конвертируем String в char и char в String на java
-    public static void main(String[] args) {
-        //Преобразуем строку в массив char'ов
-        String string = "12345";
-        char[] chArray = string.toCharArray();
-        System.out.println("Строку в массив символов: " + Arrays.toString(chArray));
-        //String в char
-        char char = string.charAt(1);
-        System.out.println("String в char: " + c);
+        System.out.println(revers(chars));
 
-        //char в String
-        String s = Character.toString(c);
-        System.out.println("char в String: " + s);
-
-        //удаляем символ 1 со строки
-        System.out.println("удаляем все символы '1' со строки: " + removeSpecificCharsFromString("1A1B1C1D121D1", '1'));
     }
 
-    private static String removeSpecificCharsFromString(String str, char c) {
-        // находим в строке str все символы c и заменяем на строковую заглушку ""
-        return str.replaceAll(Character.toString(c), "");
-    }
-     */
+//     //Конвертируем String в char и char в String на java
+//    public initialization_in_java void main(String[] args) {
+//        //Преобразуем строку в массив char'ов
+//        String string = "12345";
+//        char[] chArray = string.toCharArray();
+//        System.out.println("Строку в массив символов: " + Arrays.toString(chArray));
+//        //String в char
+//        char c= string.charAt(1);
+//        System.out.println("String в char: " + c);
+//
+//        //char в String
+//        String s = Character.toString(c);
+//        System.out.println("char в String: " + s);
+//
+//        //удаляем символ 1 со строки
+//        System.out.println("удаляем все символы '1' со строки: " + removeSpecificCharsFromString("1A1B1C1D121D1", '1'));
+//    }
+//
+//    private initialization_in_java String removeSpecificCharsFromString(String str, char c) {
+//        // находим в строке str все символы c и заменяем на строковую заглушку ""
+//        return str.replaceAll(Character.toString(c), "");
+//    }
+
 
 
     private static char[] revers(char[] str) {
 
-        int i, j;
-        for (i = 0, j = str.length - 1; i < j; i++, j--) {
-            char tmp = str[i];
+        int i,j;
+        int len = str.length;
+        char tmp;
+
+        for (i = 0, j = len -1 ; i>j ; i++, j--) {//enough change i<j and we'll change our string
+            tmp = str[i];
             str[i] = str[j];
             str[j] = tmp;
         }
         return str;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

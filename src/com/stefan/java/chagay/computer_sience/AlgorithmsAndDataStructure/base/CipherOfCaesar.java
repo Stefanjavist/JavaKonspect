@@ -76,74 +76,45 @@ public class CipherOfCaesar {
     }
 
     public static void main(String[] args) {
-        String sting = "zZzo";
+        String sting = "hello";
 
-        String ch = cipher( sting, 2);
-//        String ch1 = deCipher(ch, 6);
-//        System.out.println(ch);
         String ch1 = shiphe00r(sting, 2);
         System.out.println(ch1);
-//        System.out.println(ch1);
+        System.out.println(deCipher(ch1, 2));
 
     }
 
-    private static String shiphe00r(String str, int move) {
+    private static String shiphe00r(String str, int key) {
+        if(key > 26) {
+            key = key % 26;
+        } else if(key < 0) {
+            key = (key % 26) + 26;
+        }
 
-        String emptiness = "";
+        String rope = "";
         for (int i = 0; i < str.length(); i++) {
-            char curr = str.charAt(i);
-            if(Character.isLetter(curr)){
-                char c = (char)(curr + move);
-                if (Character.isLowerCase(c)) {
-                    if (c > 'z') {
-                        emptiness += (char) (curr - (26 - move));
-                    } else{
-                        emptiness += c;
-                    }
+            char a = str.charAt(i);
+            if(Character.isLetter(a)) {
 
-                } else if(Character.isUpperCase(c)) {
-                    if (c > 'Z') {
-                        emptiness += (char) (curr - (26 - move));
-                    } else {
-                        emptiness += c;
+                if(Character.isLowerCase(a)) {
+                    char ciherChar = (char) (a+key);
+                    if(ciherChar > 'z') {
+                        rope += (char) (ciherChar-(26-key));
+                    } else{
+                        rope += ciherChar;
                     }
                 }
-            } else {
-                emptiness += move;
-            }
 
+                if(Character.isUpperCase(a)) {
+                    char ciherChar = (char) (a+key);
+                    if(ciherChar > 'Z') {
+                        rope += (char) (ciherChar-(26-key));
+                    } else {
+                        rope += ciherChar;
+                    }
+                }
+            }else return "error it's isn't letter";
         }
-            return emptiness;
+        return rope;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
