@@ -3,6 +3,8 @@ package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.Search
 /**
  * O(n), Главное его преимущество заключается в том, что он работает со связными и
  * несортированными списками.
+ *
+ * and which them realization mr
  */
 public class LinerAlg {
 
@@ -12,13 +14,14 @@ public class LinerAlg {
      */
         private static int linerSearch(int[] arr, int target) {
             for (int i = 0; i < arr.length; i++) {
-                if(arr[i] == target) {
+                if(arr[i] > target) {
+                    return -1;
+                }
+
+                if(arr[i] == target ) {
                     return i;
                 }
 
-//                if(arr[i] > target) {
-//                    return -1;
-//                }
             }
             return -1;
         }
