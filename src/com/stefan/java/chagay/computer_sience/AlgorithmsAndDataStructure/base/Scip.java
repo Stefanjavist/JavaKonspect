@@ -1,4 +1,4 @@
-package com.stefan.java.chagay.computer_sience.examples;
+package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.base;
 
 
 public class Scip {
