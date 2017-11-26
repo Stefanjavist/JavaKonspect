@@ -1,15 +1,11 @@
-package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.SearchAlgorithms.BinarySearch;
+package com.stefan.java.chagay.computer_sience.AlgorithmsAndDataStructure.base;
 
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
-
-import java.util.Arrays;
-
-import static edu.princeton.cs.algs4.BinarySearch.rank;
 import static java.lang.Math.abs;
 import static java.lang.Math.pow;
 
+/**
+ * With winderton
+ */
 public class BinarySearch {
 
     private static void binSearch(int[] arr, int number) {

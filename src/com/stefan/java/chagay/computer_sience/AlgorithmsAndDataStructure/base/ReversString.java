@@ -5,19 +5,6 @@ public class ReversString {
 
     public static void main(String[] args) {
         String str = "Hello";
-        char[] chars = str.toCharArray();
-
-        int len = chars.length;
-        int i,j;
-        char tmp;
-
-        for (i = 0, j = len-1; i < j; i++, j--) {
-            tmp = chars[i];
-            chars[i] = chars[j];
-            chars[j] = tmp;
-        }
-
-        System.out.println(revers(chars));
 
     }
 
@@ -43,58 +30,6 @@ public class ReversString {
 //        // находим в строке str все символы c и заменяем на строковую заглушку ""
 //        return str.replaceAll(Character.toString(c), "");
 //    }
-
-
-
-    private static char[] revers(char[] str) {
-
-        int i,j;
-        int len = str.length;
-        char tmp;
-
-        for (i = 0, j = len -1 ; i>j ; i++, j--) {//enough change i<j and we'll change our string
-            tmp = str[i];
-            str[i] = str[j];
-            str[j] = tmp;
-        }
-        return str;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
